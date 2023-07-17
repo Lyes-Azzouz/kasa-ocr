@@ -1,0 +1,28 @@
+.navigation-container {
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+  top: 42px;
+
+  .elements {
+    display: flex;
+    justify-content: space-between;
+    img {
+      height: 68px;
+      width: 210.32px;
+    }
+    ul {
+      display: flex;
+      gap: 50px;
+      list-style-type: none;
+      li a {
+        text-decoration: none;
+        color: #ff6060;
+      }
+      li:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}
