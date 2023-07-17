@@ -1,0 +1,27 @@
+.footer-container {
+    position: relative;
+    background-color: #000000;
+    top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 209px;
+    width: 100%;
+    
+    .footer-content {
+    position: absolute;
+  
+    height: 209px;
+    background-color: rgb(0, 0, 0);
+    width: 1440px;
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  }
+  
+  
+  
