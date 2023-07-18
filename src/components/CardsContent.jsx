@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
+import "../styles/pages/cards_content.scss";
 
 const LogementDetails = () => {
   const { id } = useParams();
@@ -32,32 +30,36 @@ const LogementDetails = () => {
   }
 
   return (
-    <div>
-      <Navigation />
-      <div className="cards-container">
+    <div className="cards-container">
+      <div className="image">
+        <img src={logementDetails.cover} alt={logementDetails.title} />
+      </div>
+
+      <div className="cards-block">
         <div className="cards-header">
           <div className="head">
-            <img src={logementDetails.cover} alt={logementDetails.title} />
             <h2>{logementDetails.title}</h2>
             <span>{logementDetails.location}</span>
-            <div className="tags">{logementDetails.tags}</div>
+            <ul className="tags">
+              {logementDetails.tags.map((tag, index) => (
+                <li key={index}>{tag}</li>
+              ))}
+            </ul>
           </div>
 
-          <div className="description">
+          {/* <div className="description">
             <div className="colapse"></div>
             <p className="texte">{logementDetails.description}</p>
-          </div>
+          </div> */}
         </div>
-        {/* <div className="host">
+        <div className="host">
           <span>{logementDetails.host.name}</span>
           <img
             src={logementDetails.host.picture}
             alt={logementDetails.host.name}
           />
-        </div> */}
+        </div>
       </div>
-
-      <Footer />
     </div>
   );
 };
