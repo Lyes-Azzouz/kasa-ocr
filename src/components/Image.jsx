@@ -1,6 +1,4 @@
 import React from "react";
-import aboutImage from "../images/image_about.png";
-import homeImage from "../images/image_home.png";
 import { useLocation } from "react-router-dom";
 import "../styles/components/image.scss";
 
@@ -9,9 +7,9 @@ const Image = () => {
 
   const getSourceImg = () => {
     if (location.pathname === "/Home") {
-      return homeImage;
+      return "/images/image_home.png";
     } else if (location.pathname === "/About") {
-      return aboutImage;
+      return "/images/image_about.png";
     }
   };
 
