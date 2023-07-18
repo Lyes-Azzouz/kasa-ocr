@@ -3,7 +3,7 @@
   font-weight: 500;
   position: relative;
   top: 42px;
-
+  color: #ff6060;
   .elements {
     display: flex;
     justify-content: space-between;
@@ -15,7 +15,7 @@
       display: flex;
       gap: 50px;
       list-style-type: none;
- 
+
       li a {
         text-decoration: none;
         color: #ff6060;

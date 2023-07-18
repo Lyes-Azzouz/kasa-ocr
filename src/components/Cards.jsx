@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../styles/components/cards.scss";
 
 const LogementCards = () => {
@@ -24,10 +25,12 @@ const LogementCards = () => {
   return (
     <div className="card-container">
       {logements.map((logement) => (
-        <div key={logement.id} className="card">
-          <img src={logement.cover} alt={logement.title} />
-          <h2>{logement.title}</h2>
-        </div>
+        <Link key={logement.id} to={`/logement/${logement.id}`}>
+          <div className="card">
+            <img src={logement.cover} alt={logement.title} />
+            <h2>{logement.title}</h2>
+          </div>
+        </Link>
       ))}
     </div>
   );
