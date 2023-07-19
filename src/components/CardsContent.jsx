@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../styles/pages/cards_content.scss";
-import Description from "./Description";
+import Description from "../components/Description";
+import Equipements from "../components/Equipements";
+import "../styles/components/cards_content.scss";
 
 const LogementDetails = () => {
   const { id } = useParams();
   const [logementDetails, setLogementDetails] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
+  const [isEquipementsVisible, setIsEquipementsVisible] = useState(false);
 
   useEffect(() => {
     const fetchLogementDetails = async () => {
@@ -34,7 +31,7 @@ const LogementDetails = () => {
   }, [id]);
 
   if (!logementDetails) {
-    return <div>Chargement en cours...</div>;
+    return;
   }
 
   const handlePrevImage = () => {
@@ -51,6 +48,12 @@ const LogementDetails = () => {
 
   const toggleDescription = () => {
     setIsDescriptionVisible((prevVisible) => !prevVisible);
+    setIsEquipementsVisible(false);
+  };
+
+  const toggleEquipements = () => {
+    setIsEquipementsVisible((prevVisible) => !prevVisible);
+    setIsDescriptionVisible(false);
   };
 
   return (
@@ -60,15 +63,12 @@ const LogementDetails = () => {
           src={logementDetails.pictures[currentImageIndex]}
           alt={logementDetails.title}
         />
-        <div className="fleches">
-          {" "}
-          <span onClick={handlePrevImage}>
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </span>
-          <span onClick={handleNextImage}>
-            <FontAwesomeIcon icon={faChevronRight} />
-          </span>
-        </div>
+        {logementDetails.pictures.length > 1 && (
+          <div className="fleches">
+            <span onClick={handlePrevImage}>&lt;</span>
+            <span onClick={handleNextImage}>&gt;</span>
+          </div>
+        )}
       </div>
 
       <div className="cards-block">
@@ -82,22 +82,26 @@ const LogementDetails = () => {
               ))}
             </ul>
           </div>
+          <div className="collapse-container">
+            <Description
+              isDescriptionVisible={isDescriptionVisible}
+              toggleDescription={toggleDescription}
+              description={logementDetails.description}
+            />
 
-          <Description
-            isDescriptionVisible={isDescriptionVisible}
-            toggleDescription={toggleDescription}
-            description={logementDetails.description}
-          />
+            <Equipements
+              isEquipementsVisible={isEquipementsVisible}
+              toggleEquipements={toggleEquipements}
+              equipements={logementDetails.equipments}
+            />
+          </div>
         </div>
         <div className="host">
           <span>{logementDetails.host.name}</span>
-          <div className="picture-rating">
-            <img
-              src={logementDetails.host.picture}
-              alt={logementDetails.host.name}
-            />
-            <div>{logementDetails.host.rating}</div>
-          </div>
+          <img
+            src={logementDetails.host.picture}
+            alt={logementDetails.host.name}
+          />
         </div>
       </div>
     </div>

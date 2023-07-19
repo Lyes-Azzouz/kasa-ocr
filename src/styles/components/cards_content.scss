@@ -4,32 +4,44 @@
   align-items: center;
 
   margin-top: 100px;
-  .image img {
+  .image {
     height: 415px;
-    width: 1440px;
-    object-fit: cover;
-  }
+    width: 1240px;
+    position: relative;
+    overflow: hidden;
 
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
   .image .fleches {
     display: flex;
     justify-content: space-between;
     padding: 0 50px;
     font-size: 5rem;
     position: relative;
-    bottom: 278px;
+    bottom: 320px;
     color: white;
+    font-size: 10rem;
 
     span {
       cursor: pointer;
-      padding: 20px 50px;
+      user-select: none;
     }
   }
   .cards-block {
     display: flex;
-
     justify-content: space-between;
     width: 100%;
     color: #ff6060;
+    position: relative;
+    top: 120px;
+    .collapse-container {
+      display: flex;
+      justify-content: space-between;
+    }
     .head {
       position: relative;
       bottom: 120px;
