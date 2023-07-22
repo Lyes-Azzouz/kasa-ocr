@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import "../styles/components/description.scss"; // Assurez-vous d'avoir le bon chemin vers le fichier CSS des équipements.
+import "../styles/components/description.scss";
 import { useState } from "react";
 
 const Description = ({ description }) => {
