@@ -10,6 +10,7 @@
   width: 562px;
   padding: 0 20px;
   border-radius: 10px;
+  margin-bottom: 150px;
   .title {
     display: flex;
     flex-direction: row;
@@ -20,19 +21,27 @@
     cursor: pointer;
   }
   .toggle {
+    background-color: #000000;
+    text-align: left;
+
+    max-height: 170px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+  .toggle {
     max-height: 0px;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.5s ease;
   }
   .toggle.open {
-    max-height: 150px;
-    transition: max-height 0.3s ease;
+    max-height: 180px;
+    transition: max-height 0.5s ease;
   }
   .chevron {
     display: inline-block;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
   }
   .chevron.up {
-    transform: rotate(0);
+    transform: rotate(-360deg);
   }
 }

@@ -17,7 +17,7 @@ const Equipements = ({ equipements }) => {
         <h2>Equipement</h2>
         <span className={`chevron ${isEquipementsVisible ? "up" : ""}`}>
           <FontAwesomeIcon
-            icon={isEquipementsVisible ? faChevronUp : faChevronDown}
+            icon={isEquipementsVisible ? faChevronDown : faChevronUp}
           />
         </span>
       </div>

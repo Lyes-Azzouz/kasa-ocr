@@ -17,7 +17,7 @@ const Description = ({ description }) => {
         <h2>Description</h2>
         <span className={`chevron ${isDescriptionVisible ? "up" : ""}`}>
           <FontAwesomeIcon
-            icon={isDescriptionVisible ? faChevronUp : faChevronDown}
+            icon={isDescriptionVisible ? faChevronDown : faChevronUp}
           />
         </span>
       </div>
