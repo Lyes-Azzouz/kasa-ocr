@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import Image from "../components/Image";
+import Footer from "../components/Footer";
 // Utilisation du composant CollapseAbout pour la page About
 import CollapseAbout from "../components/CollapseAbout";
 
@@ -32,9 +33,9 @@ const About = () => {
   return (
     <div>
       <Navigation />
-
-      <CollapseAbout collapses={collapses} />
       <Image />
+      <CollapseAbout collapses={collapses} />
+      <Footer />
     </div>
   );
 };
