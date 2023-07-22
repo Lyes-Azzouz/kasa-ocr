@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import Description from "../components/Description";
 import Equipements from "../components/Equipements";
 import "../styles/components/cards_content.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const LogementDetails = () => {
   const { id } = useParams();
@@ -56,6 +58,31 @@ const LogementDetails = () => {
     setIsDescriptionVisible(false);
   };
 
+  // Fonction pour gérer le rating sur les étoiles
+  const starsForRating = (rating) => {
+    const total = 5;
+    const starsFull = parseInt(rating, 10);
+    const starsEmpty = total - starsFull;
+    const stars = [];
+
+    for (let i = 0; i < starsFull; i++) {
+      stars.push(
+        <FontAwesomeIcon icon={faStar} key={i} className="stars-full" />
+      );
+    }
+
+    for (let i = 0; i < starsEmpty; i++) {
+      stars.push(
+        <FontAwesomeIcon
+          icon={faStar}
+          key={i + starsFull + 1}
+          className="stars-empty"
+        />
+      );
+    }
+
+    return stars;
+  };
   return (
     <div className="cards-container">
       <div className="image">
@@ -102,6 +129,9 @@ const LogementDetails = () => {
             src={logementDetails.host.picture}
             alt={logementDetails.host.name}
           />
+          <div className="stars">
+            {starsForRating(parseInt(logementDetails.rating, 10))}
+          </div>
         </div>
       </div>
     </div>
