@@ -7,13 +7,13 @@ import { useState } from "react";
 const Description = ({ description }) => {
   const [isDescriptionVisible, setDescpritionVisible] = useState(false);
 
-  const toggleEquipements = () => {
+  const toggleDescription = () => {
     setDescpritionVisible(!isDescriptionVisible);
   };
 
   return (
     <div className="description">
-      <div className="title" onClick={toggleEquipements}>
+      <div className="title" onClick={toggleDescription}>
         <h2>Description</h2>
         <span className={`chevron ${isDescriptionVisible ? "up" : ""}`}>
           <FontAwesomeIcon
