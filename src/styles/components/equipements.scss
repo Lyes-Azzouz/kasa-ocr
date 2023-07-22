@@ -24,12 +24,20 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    li {
+      max-width: 200px;
+      margin: 0px;
+      display: flex;
+      align-items: baseline;
+      position: relative;
+      right: 40px;
+    }
   }
-  .toggle {
-    max-height: 0px;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-  }
+
   .toggle.open {
     max-height: 150px;
     transition: max-height 0.5s ease;

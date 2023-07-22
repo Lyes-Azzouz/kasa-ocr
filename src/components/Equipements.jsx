@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import "../styles/components/equipements.scss"; // Assurez-vous d'avoir le bon chemin vers le fichier CSS des équipements.
-import { useState } from "react";
+import "../styles/components/equipements.scss";
 
 const Equipements = ({ equipements }) => {
   const [isEquipementsVisible, setEquipementsVisible] = useState(false);
@@ -21,9 +20,13 @@ const Equipements = ({ equipements }) => {
           />
         </span>
       </div>
-      <div className={`toggle ${isEquipementsVisible ? "open" : ""}`}>
-        <p className="texte">{equipements}</p>
-      </div>
+      <ul className={`toggle ${isEquipementsVisible ? "open" : ""}`}>
+        {equipements.map((equipement, index) => (
+          <li className="texte" key={index}>
+            {equipement}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

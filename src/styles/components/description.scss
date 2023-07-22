@@ -10,7 +10,6 @@
   width: 562px;
   padding: 0 20px;
   border-radius: 10px;
-  margin-bottom: 150px;
   .title {
     display: flex;
     flex-direction: row;
@@ -21,20 +20,15 @@
     cursor: pointer;
   }
   .toggle {
-    background-color: #000000;
-    text-align: left;
-
-    max-height: 170px;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-  }
-  .toggle {
     max-height: 0px;
     overflow: hidden;
-    transition: max-height 0.5s ease;
+    transition: max-height 0.1s ease;
+    p {
+      width: 500px;
+    }
   }
   .toggle.open {
-    max-height: 180px;
+    max-height: 150px;
     transition: max-height 0.5s ease;
   }
   .chevron {
