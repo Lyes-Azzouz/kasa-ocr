@@ -2,32 +2,27 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import "../styles/components/equipements.scss"; // Assurez-vous d'avoir le bon chemin vers le fichier CSS des équipements.
+import { useState } from "react";
 
-const Equipements = ({
-  isEquipementsVisible,
-  toggleEquipements,
-  equipements,
-}) => {
+const Equipements = ({ equipements }) => {
+  const [isEquipementsVisible, setEquipementsVisible] = useState(false);
+
+  const toggleEquipements = () => {
+    setEquipementsVisible(!isEquipementsVisible);
+  };
+
   return (
-    <div className={`equipements ${isEquipementsVisible ? "up" : ""}`}>
-      {" "}
-      <div className="title">
-        <h2>Equipements</h2>
-        <span onClick={toggleEquipements}>
+    <div className="equipement">
+      <div className="title" onClick={toggleEquipements}>
+        <h2>Equipement</h2>
+        <span className={`chevron ${isEquipementsVisible ? "up" : ""}`}>
           <FontAwesomeIcon
-            className={`chevron down ${isEquipementsVisible ? "up" : ""}`}
             icon={isEquipementsVisible ? faChevronUp : faChevronDown}
           />
-        </span>{" "}
+        </span>
       </div>
-      <div className="toggle">
-        {isEquipementsVisible && (
-          <ul>
-            {equipements.map((equipement, index) => (
-              <li key={index}>{equipement}</li>
-            ))}
-          </ul>
-        )}
+      <div className={`toggle ${isEquipementsVisible ? "open" : ""}`}>
+        <p className="texte">{equipements}</p>
       </div>
     </div>
   );

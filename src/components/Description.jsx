@@ -1,27 +1,28 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import "../styles/components/description.scss";
+import "../styles/components/description.scss"; // Assurez-vous d'avoir le bon chemin vers le fichier CSS des équipements.
+import { useState } from "react";
 
-const Description = ({
-  isDescriptionVisible,
-  toggleDescription,
-  description,
-}) => {
+const Description = ({ description }) => {
+  const [isDescriptionVisible, setDescpritionVisible] = useState(false);
+
+  const toggleEquipements = () => {
+    setDescpritionVisible(!isDescriptionVisible);
+  };
+
   return (
-    <div className={`description ${isDescriptionVisible ? "up" : ""}`}>
-      {" "}
-      <div className="title">
+    <div className="description">
+      <div className="title" onClick={toggleEquipements}>
         <h2>Description</h2>
-        <span onClick={toggleDescription}>
+        <span className={`chevron ${isDescriptionVisible ? "up" : ""}`}>
           <FontAwesomeIcon
-            className={`chevron down ${isDescriptionVisible ? "up" : ""}`}
             icon={isDescriptionVisible ? faChevronUp : faChevronDown}
           />
-        </span>{" "}
+        </span>
       </div>
-      <div className="toggle">
-        {isDescriptionVisible && <p className="texte">{description}</p>}
+      <div className={`toggle ${isDescriptionVisible ? "open" : ""}`}>
+        <p className="texte">{description}</p>
       </div>
     </div>
   );
