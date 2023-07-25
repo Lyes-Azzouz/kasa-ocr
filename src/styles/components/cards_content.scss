@@ -22,15 +22,23 @@
     padding: 0 50px;
     font-size: 5rem;
     position: relative;
-    bottom: 320px;
+    bottom: 280px;
     color: white;
-    font-size: 10rem;
+    font-size: 6rem;
 
     span {
       cursor: pointer;
       user-select: none;
     }
   }
+  .image-counter {
+    color: white;
+    padding: 5px;
+    position: absolute;
+    bottom: 20px;
+    right: 47.9%;
+  }
+
   .cards-block {
     display: flex;
     justify-content: space-between;
@@ -84,7 +92,7 @@
     align-items: center;
     position: relative;
     bottom: 175px;
-    right: 118px;
+    right: 170px;
     span {
       max-width: 93px;
       text-align: right;

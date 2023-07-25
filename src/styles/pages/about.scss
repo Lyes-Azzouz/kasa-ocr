@@ -1,0 +1,39 @@
+.about-collapse {
+  position: relative;
+  left: 50%;
+  top: 140px;
+  transform: translate(-50%);
+  width: 1023px;
+  margin-bottom: 30px;
+  .toggle {
+    max-height: 100%;
+
+    transition: max-height 0.5s ease;
+    margin-bottom: 50px;
+
+    &.open {
+      padding-bottom: 20px;
+    }
+    .content {
+      transition: 0.5s ease;
+
+      position: relative;
+      bottom: 30px;
+      &.open {
+        opacity: 1;
+        max-height: 100%;
+      }
+    }
+  }
+
+  &.open {
+    .toggle {
+      .content {
+        white-space: normal;
+      }
+    }
+  }
+}
+.separation {
+  height: 90px;
+}

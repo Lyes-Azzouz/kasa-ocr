@@ -10,6 +10,7 @@
   width: 562px;
   padding: 0 20px;
   border-radius: 10px;
+  margin-right: 40px;
   .title {
     display: flex;
     flex-direction: row;
@@ -25,8 +26,10 @@
     transition: max-height 0.1s ease;
     p {
       width: 500px;
+      color: #ff6060;
     }
   }
+
   .toggle.open {
     max-height: 150px;
     transition: max-height 0.5s ease;
@@ -36,6 +39,6 @@
     transition: transform 0.5s ease;
   }
   .chevron.up {
-    transform: rotate(-360deg);
+    transform: rotate(180deg);
   }
 }

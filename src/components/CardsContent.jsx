@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Description from "../components/Description";
-import Equipements from "../components/Equipements";
+import Collapse from "./Collapse";
 import "../styles/components/cards_content.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const LogementDetails = () => {
   const { id } = useParams();
   const [logementDetails, setLogementDetails] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
-  const [isEquipementsVisible, setIsEquipementsVisible] = useState(false);
 
   useEffect(() => {
     const fetchLogementDetails = async () => {
@@ -33,7 +35,7 @@ const LogementDetails = () => {
   }, [id]);
 
   if (!logementDetails) {
-    return;
+    return null;
   }
 
   const handlePrevImage = () => {
@@ -48,20 +50,10 @@ const LogementDetails = () => {
     );
   };
 
-  const toggleDescription = () => {
-    setIsDescriptionVisible((prevVisible) => !prevVisible);
-    setIsEquipementsVisible(false);
-  };
-
-  const toggleEquipements = () => {
-    setIsEquipementsVisible((prevVisible) => !prevVisible);
-    setIsDescriptionVisible(false);
-  };
-
   // Fonction pour gérer le rating sur les étoiles
   const starsForRating = (rating) => {
     const total = 5;
-    const starsFull = parseInt(rating, 10);
+    const starsFull = parseInt(rating);
     const starsEmpty = total - starsFull;
     const stars = [];
 
@@ -83,6 +75,7 @@ const LogementDetails = () => {
 
     return stars;
   };
+
   return (
     <div className="cards-container">
       <div className="image">
@@ -92,10 +85,17 @@ const LogementDetails = () => {
         />
         {logementDetails.pictures.length > 1 && (
           <div className="fleches">
-            <span onClick={handlePrevImage}>&lt;</span>
-            <span onClick={handleNextImage}>&gt;</span>
+            <span onClick={handlePrevImage}>
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </span>
+            <span onClick={handleNextImage}>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </span>
           </div>
         )}
+        <div className="image-counter">
+          {currentImageIndex + 1} / {logementDetails.pictures.length}
+        </div>
       </div>
 
       <div className="cards-block">
@@ -110,16 +110,14 @@ const LogementDetails = () => {
             </ul>
           </div>
           <div className="collapse-container">
-            <Description
-              isDescriptionVisible={isDescriptionVisible}
-              toggleDescription={toggleDescription}
-              description={logementDetails.description}
+            <Collapse
+              title="Description"
+              content={logementDetails.description}
             />
 
-            <Equipements
-              isEquipementsVisible={isEquipementsVisible}
-              toggleEquipements={toggleEquipements}
-              equipements={logementDetails.equipments}
+            <Collapse
+              title="Equipements"
+              content={logementDetails.equipments.join(", ")}
             />
           </div>
         </div>
@@ -130,7 +128,7 @@ const LogementDetails = () => {
             alt={logementDetails.host.name}
           />
           <div className="stars">
-            {starsForRating(parseInt(logementDetails.rating, 10))}
+            {starsForRating(parseInt(logementDetails.rating))}
           </div>
         </div>
       </div>
