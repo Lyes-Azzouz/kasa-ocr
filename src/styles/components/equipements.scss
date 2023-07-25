@@ -1,0 +1,52 @@
+.equipement {
+  position: relative;
+  bottom: 150px;
+  left: 40px;
+  background-color: #ff6060;
+  color: white;
+  font-size: 1em;
+  font-weight: 300;
+  align-items: center;
+  height: 52px;
+  width: 562px;
+  padding: 0 20px;
+  border-radius: 10px;
+  .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    bottom: 7px;
+    cursor: pointer;
+  }
+  .toggle {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    li {
+      max-width: 200px;
+      margin: 0px;
+      display: flex;
+      align-items: baseline;
+      position: relative;
+      right: 40px;
+    }
+  }
+
+  .toggle.open {
+    max-height: 150px;
+    transition: max-height 0.5s ease;
+  }
+  .chevron {
+    display: inline-block;
+    transition: transform 0.5s ease;
+  }
+  .chevron.up {
+    transform: rotate(180deg);
+  }
+}

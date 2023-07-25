@@ -3,7 +3,7 @@ import Navigation from "../components/Navigation";
 import Image from "../components/Image";
 import Footer from "../components/Footer";
 import Collapse from "../components/Collapse";
-
+import "../styles/components/collapse.scss";
 import "../styles/pages/about.scss";
 
 const About = () => {
@@ -49,6 +49,7 @@ const About = () => {
             customClass="about-collapse"
             isOpen={openCollapseIndex === index}
             toggleCollapse={() => toggleCollapse(index)}
+            isOpenAbout={index === openCollapseIndex}
           />
         ))}
       </div>

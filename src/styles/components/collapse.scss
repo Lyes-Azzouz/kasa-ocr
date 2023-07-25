@@ -1,4 +1,5 @@
 .description {
+  // Styles communs pour les collapses
   position: relative;
   bottom: 150px;
   background-color: #ff6060;
@@ -11,6 +12,7 @@
   padding: 0 20px;
   border-radius: 10px;
   margin-right: 40px;
+
   .title {
     display: flex;
     flex-direction: row;
@@ -20,10 +22,12 @@
     bottom: 7px;
     cursor: pointer;
   }
+
   .toggle {
-    max-height: 0px;
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.1s ease;
+
     p {
       width: 500px;
       color: #ff6060;
@@ -34,11 +38,46 @@
     max-height: 150px;
     transition: max-height 0.5s ease;
   }
+
   .chevron {
     display: inline-block;
     transition: transform 0.5s ease;
   }
+
   .chevron.up {
     transform: rotate(180deg);
+  }
+}
+
+// Style spécifique pour la page "About"
+.about-collapse {
+  width: 1023px;
+  margin: 40px 0;
+  left: 50%;
+  transform: translate(-50%);
+  position: relative;
+  top: 100px;
+
+  .toggle {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+
+    &.open {
+      max-height: 200px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      position: absolute;
+    }
+
+    .content {
+      transition: 0.5s ease;
+      position: relative;
+      bottom: 30px;
+
+      &.open {
+        opacity: 1;
+      }
+    }
   }
 }

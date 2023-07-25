@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import "../styles/components/collapse.scss";
 
-const Collapse = ({ title, content, customClass, isOpenAbout }) => {
+const Collapse = ({ title, content, customClass }) => {
   const [isContentVisible, setContentVisible] = useState(false);
 
   const toggleContent = () => {
@@ -11,7 +11,9 @@ const Collapse = ({ title, content, customClass, isOpenAbout }) => {
   };
 
   return (
-    <div className={`description ${customClass} ${isOpenAbout ? "open" : ""}`}>
+    <div
+      className={`description ${customClass} ${isContentVisible ? "open" : ""}`}
+    >
       <div className="title" onClick={toggleContent}>
         <h2>{title}</h2>
         <span className={`chevron ${isContentVisible ? "up" : ""}`}>
