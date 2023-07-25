@@ -42,3 +42,14 @@
     }
   }
 }
+@media (max-width: 375px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .card {
+    width: 100%;
+  }
+}

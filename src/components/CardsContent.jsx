@@ -7,7 +7,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
-
+import Error from "../pages/Error";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const LogementDetails = () => {
@@ -35,7 +35,7 @@ const LogementDetails = () => {
   }, [id]);
 
   if (!logementDetails) {
-    return null;
+    return <Error />;
   }
 
   const handlePrevImage = () => {

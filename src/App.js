@@ -10,11 +10,12 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/error" element={<Error showNavAndFooter={false} />} />
         <Route path="/" element={<Navigate to="/Home" />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/About" element={<About />} />
         <Route path="/logement/:id" element={<Logements />} />
-        <Route path="/*" element={<Error />} />
+        <Route path="/*" element={<Error showNavAndFooter={true} />} />
       </Routes>
     </BrowserRouter>
   );
