@@ -20,7 +20,6 @@
     display: flex;
     justify-content: space-between;
     padding: 0 50px;
-    font-size: 5rem;
     position: relative;
     bottom: 280px;
     color: white;
@@ -121,6 +120,92 @@
 
       .stars-empty {
         color: #e3e3e3;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .cards-container {
+    width: 335px;
+    margin: 100px auto 50px auto;
+    display: flex;
+    justify-content: center;
+    .image {
+      height: 255px;
+      width: 335px;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .image .fleches {
+      display: flex;
+
+      padding: 0 10px;
+      font-size: 1.5rem;
+      position: relative;
+      bottom: 150px;
+      color: white;
+    }
+    .image-counter {
+      display: none;
+    }
+    .cards-block {
+      width: 335px;
+      .collapse-container {
+        flex-direction: column;
+        width: 335px;
+      }
+      .head {
+        h2 {
+          font-size: 18px;
+          width: 335px;
+        }
+        span {
+          font-size: 14px;
+          bottom: 22px;
+        }
+        .tags {
+          max-width: 335px;
+          bottom: 25px;
+
+          li {
+            font-size: 10px;
+            min-width: 74px;
+          }
+        }
+      }
+    }
+    .host {
+      height: 33px;
+      margin-left: 25px;
+      bottom: 20px;
+
+      span {
+        font-size: 12px;
+        max-width: 93px;
+        text-align: right;
+        position: relative;
+        left: 48px;
+      }
+      img {
+        height: 32px;
+        position: relative;
+        left: 40px;
+      }
+      .stars {
+        width: 100px;
+        top: 0;
+        right: 310px;
+        height: 18px;
+        svg {
+          height: 14px;
+        }
       }
     }
   }

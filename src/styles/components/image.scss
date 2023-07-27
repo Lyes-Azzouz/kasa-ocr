@@ -41,3 +41,20 @@
     }
   }
 }
+
+@media (max-width: 375px) {
+  .image-container {
+    height: 111px;
+    width: 335px;
+    margin: 0 auto;
+    top: 68px;
+    .image-wrapper p {
+      font-size: 24px;
+      padding-right: 75px;
+      width: 220px;
+    }
+  }
+  .about-mobile {
+    height: 223px;
+  }
+}

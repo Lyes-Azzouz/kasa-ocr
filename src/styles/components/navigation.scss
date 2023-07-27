@@ -27,3 +27,23 @@
     }
   }
 }
+
+@media (max-width: 375px) {
+  .navigation-container {
+    max-width: 335px;
+    margin: 0 auto;
+    .elements {
+      img {
+        height: 46.88px;
+        width: 145px;
+      }
+      ul {
+        font-size: 13px;
+        font-weight: 400;
+        margin: 16px 5px 0 0;
+        gap: 30px;
+        list-style-type: none;
+      }
+    }
+  }
+}

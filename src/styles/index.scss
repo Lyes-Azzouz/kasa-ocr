@@ -5,7 +5,18 @@ body {
   padding: 0;
   font-family: "Montserrat", sans-serif;
   margin: 0 auto;
-  width: 1440px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  min-width: 1440px;
+}
+
+@media (max-width: 375px) {
+  html,
+  body {
+    min-width: 375px;
+
+    overflow-x: hidden;
+  }
 }

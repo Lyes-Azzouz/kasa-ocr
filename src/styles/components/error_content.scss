@@ -24,3 +24,25 @@
     }
   }
 }
+@media (max-width: 375px) {
+  .texte {
+    width: 335px;
+    margin: 100px auto;
+    h1 {
+      font-size: 4rem;
+    }
+    .subtitle {
+      p {
+        font-size: 18px;
+
+        margin-left: 60px;
+        line-height: 25px;
+      }
+      a {
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

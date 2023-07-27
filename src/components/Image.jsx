@@ -14,9 +14,12 @@ const Image = () => {
   };
 
   const texte = location.pathname === "/Home";
+  // imgHeight correspond a la hauteur de l'image dans le header
+  // L'image est plus grande pour la page About en format mobile que pour la page Home
+  const imgHeight = location.pathname === "/About";
 
   return (
-    <div className="image-container">
+    <div className={`image-container ${imgHeight && "about-mobile"}`}>
       <div className="image-wrapper">
         {texte && <p className="image-text">Chez vous, partout et ailleurs</p>}
         <div className="image-sombre"></div>
