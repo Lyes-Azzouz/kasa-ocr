@@ -162,6 +162,9 @@
         width: 335px;
       }
       .head {
+        display: flex;
+        flex-direction: column;
+
         h2 {
           font-size: 18px;
           width: 335px;
@@ -172,39 +175,11 @@
         }
         .tags {
           max-width: 335px;
-          bottom: 25px;
 
           li {
             font-size: 10px;
             min-width: 74px;
           }
-        }
-      }
-    }
-    .host {
-      height: 33px;
-      margin-left: 25px;
-      bottom: 20px;
-
-      span {
-        font-size: 12px;
-        max-width: 93px;
-        text-align: right;
-        position: relative;
-        left: 48px;
-      }
-      img {
-        height: 32px;
-        position: relative;
-        left: 40px;
-      }
-      .stars {
-        width: 100px;
-        top: 0;
-        right: 310px;
-        height: 18px;
-        svg {
-          height: 14px;
         }
       }
     }
