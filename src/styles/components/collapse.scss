@@ -1,4 +1,5 @@
 /* Styles communs pour les collapses */
+
 .description {
   position: relative;
   bottom: 140px;
@@ -29,14 +30,14 @@
   overflow: hidden;
   transition: max-height 0.5s ease;
 
-  p {
+  .content {
     width: 500px;
     color: #ff6060;
   }
 }
 
 .description .toggle.open {
-  max-height: 150px;
+  max-height: 200px;
   transition: max-height 0.5s ease;
 }
 
@@ -84,7 +85,7 @@
   margin-bottom: 100px;
 }
 
-@media screen and (max-width: 490px) {
+@media screen and (max-width: 767px) {
   .description {
     width: auto;
     height: auto;
@@ -107,7 +108,7 @@
       overflow: hidden;
       transition: max-height 0.5s ease;
 
-      p {
+      .content {
         width: auto;
         color: #ff6060;
         padding: 20px 40px;
@@ -122,8 +123,8 @@
       transition: max-height 0.5s ease;
       background-color: white;
       position: relative;
-      right: 20px;
-      width: 450px;
+      right: 0px;
+      width: 335px;
     }
   }
 
@@ -133,7 +134,7 @@
 
   .collapses-container {
     .about-collapse {
-      width: 375px;
+      width: 335px;
 
       margin: 10px 0;
       left: 50%;

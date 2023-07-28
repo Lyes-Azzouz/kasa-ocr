@@ -130,8 +130,15 @@ const LogementDetails = () => {
 
             <Collapse
               title="Equipements"
-              content={logementDetails.equipments.join(", ")}
-            />
+              content={logementDetails.equipments}
+              customClass="collapse-description"
+            >
+              <ul>
+                {logementDetails.equipments.map((equipment, index) => (
+                  <li key={index}>{equipment}</li>
+                ))}
+              </ul>
+            </Collapse>
           </div>
         </div>
       </div>

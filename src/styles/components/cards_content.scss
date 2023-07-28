@@ -73,6 +73,7 @@
             right: 40px;
             max-width: 20px;
             padding-right: 20px;
+            text-align: right;
           }
           img {
             border-radius: 50%;
@@ -133,16 +134,16 @@
   }
 }
 
-@media screen and (max-width: 490px) {
+@media screen and (max-width: 767px) {
   .cards-container {
-    width: 375px;
+    width: 335px;
     margin: 100px auto 50px auto;
     display: flex;
     justify-content: center;
 
     .image {
       height: 255px;
-      width: 375px;
+      width: 335px;
       position: relative;
       overflow: hidden;
 
@@ -167,11 +168,11 @@
     }
 
     .cards-block {
-      width: 375px;
+      width: 335px;
 
       .collapse-container {
         flex-direction: column;
-        width: 375px;
+        width: 335px;
       }
 
       .head {
@@ -198,7 +199,7 @@
             margin-left: auto;
             position: relative;
             top: 55px;
-            left: 220px;
+            left: 195px;
             gap: 15px;
             text-align: right;
 
@@ -207,7 +208,6 @@
               padding-left: 5px;
               margin-bottom: 10px;
               display: block;
-
               position: relative;
               left: 0px;
             }

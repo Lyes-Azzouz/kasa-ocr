@@ -42,14 +42,14 @@
     }
   }
 }
-@media screen and (max-width: 490px) {
+@media screen and (max-width: 767px) {
   .card-container {
     margin: 90px auto 0 auto;
     width: 336px;
     gap: 20px;
     .card {
       width: 100%;
-      width: 375px;
+      width: 335px;
 
       height: 280px;
       gap: 8px;
@@ -59,7 +59,7 @@
       img {
         margin: auto;
         height: 190px;
-        width: 280px;
+        width: 285px;
       }
       h2 {
         height: 52px;

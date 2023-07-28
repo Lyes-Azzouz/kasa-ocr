@@ -22,10 +22,10 @@
   color: white;
 }
 
-@media screen and (max-width: 490px) {
+@media screen and (max-width: 767px) {
   .footer-container,
   .footer-content {
-    width: 375px;
+    width: 335px;
     height: 209px;
     gap: 20px;
     span {
