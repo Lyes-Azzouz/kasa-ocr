@@ -108,6 +108,19 @@ const LogementDetails = () => {
                 <li key={index}>{tag}</li>
               ))}
             </ul>
+            <div className="host">
+              <div className="profil">
+                <span>{logementDetails.host.name}</span>
+                <img
+                  src={logementDetails.host.picture}
+                  alt={logementDetails.host.name}
+                />
+              </div>
+
+              <div className="stars">
+                {starsForRating(parseInt(logementDetails.rating))}
+              </div>
+            </div>
           </div>
           <div className="collapse-container">
             <Collapse
@@ -119,16 +132,6 @@ const LogementDetails = () => {
               title="Equipements"
               content={logementDetails.equipments.join(", ")}
             />
-          </div>
-        </div>
-        <div className="host">
-          <span>{logementDetails.host.name}</span>
-          <img
-            src={logementDetails.host.picture}
-            alt={logementDetails.host.name}
-          />
-          <div className="stars">
-            {starsForRating(parseInt(logementDetails.rating))}
           </div>
         </div>
       </div>
