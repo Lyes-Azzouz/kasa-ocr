@@ -53,6 +53,10 @@
     .head {
       position: relative;
       bottom: 120px;
+      span {
+        position: relative;
+        bottom: 30px;
+      }
       .host {
         display: flex;
         gap: 20px;
