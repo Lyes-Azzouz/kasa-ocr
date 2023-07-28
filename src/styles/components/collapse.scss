@@ -118,12 +118,12 @@
     }
 
     .toggle.open {
-      max-height: 220px;
+      max-height: 230px;
       transition: max-height 0.5s ease;
       background-color: white;
       position: relative;
-      right: 1px;
-      width: 337px;
+      right: 20px;
+      width: 450px;
     }
   }
 
