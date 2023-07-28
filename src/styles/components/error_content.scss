@@ -24,9 +24,10 @@
     }
   }
 }
-@media (max-width: 375px) {
+@media screen and (max-width: 490px) {
   .texte {
-    width: 335px;
+    width: 375px;
+
     margin: 100px auto;
     h1 {
       font-size: 4rem;

@@ -42,10 +42,10 @@
   }
 }
 
-@media (max-width: 375px) {
+@media screen and (max-width: 490px) {
   .image-container {
     height: 111px;
-    width: 335px;
+    width: 375px;
     margin: 0 auto;
     top: 68px;
     .image-wrapper p {

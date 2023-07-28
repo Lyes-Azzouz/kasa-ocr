@@ -28,9 +28,9 @@
   }
 }
 
-@media (max-width: 375px) {
+@media screen and (max-width: 490px) {
   .navigation-container {
-    max-width: 335px;
+    max-width: 375px;
     margin: 0 auto;
     .elements {
       img {

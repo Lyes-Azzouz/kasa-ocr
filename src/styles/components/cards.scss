@@ -42,14 +42,15 @@
     }
   }
 }
-@media (max-width: 375px) {
+@media screen and (max-width: 490px) {
   .card-container {
     margin: 90px auto 0 auto;
     width: 336px;
     gap: 20px;
     .card {
       width: 100%;
-      width: 335px;
+      width: 375px;
+
       height: 280px;
       gap: 8px;
       display: flex;

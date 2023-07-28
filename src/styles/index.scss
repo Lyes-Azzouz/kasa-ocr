@@ -12,7 +12,7 @@ body {
   min-width: 1440px;
 }
 
-@media (max-width: 375px) {
+@media screen and (max-width: 767px) {
   html,
   body {
     min-width: 375px;
